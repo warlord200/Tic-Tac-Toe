@@ -17,14 +17,13 @@ const displayController = (() => {
   const render = () => {
     // render the board
     const gameBoard = document.querySelector(".game-board");
-    gameBoard.innerHTML = "Hey";
 
-    // for (let i = 1; i < 10; i++) {
-    //   const cell = document.createElement("div");
-    //   cell.classList.add("cell");
-    //   cell.setAttribute("id", gameBoard.board[i].id);
-    //   gameBoard.appendChild(cell);
-    // }
+    for (let i = 1; i < 10; i++) {
+      const cell = document.createElement("div");
+      cell.classList.add("cell");
+      cell.setAttribute("id", game.board[i - 1].id);
+      gameBoard.appendChild(cell);
+    }
   };
   return { render };
 })();
