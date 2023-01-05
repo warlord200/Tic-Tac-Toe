@@ -36,23 +36,21 @@ const game = (() => {
         game.resetBoard();
       }
     }
-
     // check diagonal win
-
-    for (let i = 0; i < 3; i += 2) {
-      if ((i = 0)) {
-        if (game.board[i + 3].value === game.board[i + 6].value) {
-          if (game.board[i].value === null) continue;
-          console.log("winner");
-          game.resetBoard();
-        }
-      } else {
-        if (game.board[i + 2].value === game.board[i + 4].value) {
-          if (game.board[i].value === null) continue;
-          console.log("winner");
-          game.resetBoard();
-        }
-      }
+    if (
+      game.board[0].value === game.board[4].value &&
+      game.board[0].value === game.board[8].value
+    ) {
+      if (game.board[0].value === null) return;
+      console.log("winner");
+      game.resetBoard();
+    } else if (
+      game.board[2].value === game.board[4].value &&
+      game.board[2].value === game.board[6].value
+    ) {
+      if (game.board[2].value === null) return;
+      console.log("winner");
+      game.resetBoard();
     }
   };
   const resetBoard = () => {
